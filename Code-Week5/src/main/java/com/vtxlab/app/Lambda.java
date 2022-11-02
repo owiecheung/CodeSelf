@@ -48,7 +48,7 @@ public class Lambda {
     //BiFunction<Integer,Integer,Integer> megrgeFrequencyByName = Integer :: sum;
     BiFunction<Integer,Integer,Integer> megrgeFrequencyByName = (a,b) -> a + b;
     //return b;  -> turn 
-
+    
     //1."Peter" is a key to find the value in the map.entry
     //2. Them compute the return value and second paramter arroiding to these formla
     //3. 3 + 4 =7
