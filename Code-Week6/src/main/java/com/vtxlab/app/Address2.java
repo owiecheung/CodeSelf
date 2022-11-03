@@ -1,8 +1,7 @@
 package com.vtxlab.app;
 
-import java.util.Objects;
 import java.util.function.Predicate;
-import java.util.regex.Pattern;
+
 
 public class Address2 {
   private static final int MAX_ADDRESS_LINE_LENGTH = 20;

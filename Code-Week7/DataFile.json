@@ -1,0 +1,44 @@
+{
+  "human": [
+    {
+      "name": "john",
+      "age": 16,
+      "isMale": true, 
+      "address": {
+        "address1": "1",
+        "address1": "2",
+        "address1": "3"
+      },
+      "animals": [
+        {
+          "name": "booby",
+          "age": 14,
+          "type": "dog"
+        },
+        {
+          "name": "Jenny",
+          "age": 2,
+          "type": "cat"
+        }
+      ]
+    },
+    {
+      "name": "Mee",
+      "age": 16,
+      "isMale": true, 
+      "address": null, 
+      "animals": [
+        {
+          "name": "booby",
+          "age": 14,
+          "type": "dog"
+        },
+        {
+          "name": "Jenny",
+          "age": 2,
+          "type": "cat"
+        }
+      ]
+    }
+  ]
+}
