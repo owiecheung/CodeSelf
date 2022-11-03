@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <customer>
+    <customer>
+      <name>John</name>
+      <age>23</age>
+    </customer>
+    <customer>
+    <name>Boobby</name>
+    <age>11</age>
+    </customer>
+  </customer>
