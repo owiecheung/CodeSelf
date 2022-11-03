@@ -1,0 +1,33 @@
+server: 123
+# Comment line
+# No comma is allowed
+
+# \n space as the next item 
+# different level should be inspace
+# yaml won't use as a data exchange
+#YAML normally used for deserialization 
+
+# Config use 
+# Read data
+#String can without "abc" or abc 
+cryptoData:
+  tarbetUrl: www.xxx.com/price
+  timeout: 2000 #ms
+  method: "GET"
+  hex: 0x12d4 #evaluates to 4820
+  octal: 02332 #evaluates to 9846
+#JSON can't start with 0
+
+
+customer: 
+  name: "Kace"
+  age:  16
+  address:
+    address1: "some1"
+    address2: "some2"
+    address3: "some3"
+
+employess:
+- john:
+    name: Dan D. Veloper
+    job: Developer

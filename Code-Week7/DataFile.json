@@ -6,8 +6,8 @@
       "isMale": true, 
       "address": {
         "address1": "1",
-        "address1": "2",
-        "address1": "3"
+        "address2": "2",
+        "address3": "3"
       },
       "animals": [
         {
