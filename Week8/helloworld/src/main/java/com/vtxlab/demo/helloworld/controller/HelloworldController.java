@@ -1,5 +1,7 @@
 package com.vtxlab.demo.helloworld.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -142,5 +144,29 @@ public class HelloworldController {
     return helloworldService.sayhello(name);
   }
 
+  @GetMapping(value = {"helloworld/list/{name}/{name2}",
+  "helloworld/list/{name}"})
+  public List<String> gethelloworldByList(
+    @PathVariable Map<String,String> map){
 
+      List<String> strings = new ArrayList<>();
+      map.forEach((a,b) -> {
+        strings.add(helloworldService.sayhello(b));
+      });
+      return strings;
+    }
+  
+    /* 
+    @GetMapping(value = {"helloworld/map/{name}/{name2}",
+    "helloworld/map/{name}"})
+    public Map<String, List<String>> gethelloworldByMap(
+      @PathVariable Map<String,List<String>> map){
+
+        List<String> strings = new ArrayList<>();
+    //    map.forEach((a,b) -> {
+      //    strings.add(helloworldService.sayhello(b));
+     //   });
+
+    }
+    */
 }
