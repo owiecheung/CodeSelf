@@ -1,0 +1,6 @@
+
+
+
+INSERT INTO COMMENTS (CONTENT) value ("comment AAA~");
+INSERT INTO COMMENTS (CONTENT) value ("comment BBB~");
+INSERT INTO COMMENTS (CONTENT) value ("comment CCC~");
