@@ -11,10 +11,12 @@ import com.vtxlab.demo.book.entity.Book;
 import com.vtxlab.demo.book.repository.BookRepository;
 import com.vtxlab.demo.book.service.BookService;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+@AllArgsConstructor
 public class BookstoreService implements BookService {
   
   @Autowired
@@ -45,8 +47,9 @@ public class BookstoreService implements BookService {
     Book book = bookRepository.findById(id).orElse(null);
     if (bookRepository.existsById(id)){
       bookRepository.deleteById(id);
+      return book;
     }
-    return book;
+    return null;
  }
 
   @Override

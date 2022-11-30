@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -127,7 +134,7 @@ public class HelloworldController {
   }
 
 
-  @Autowired
+  @Autowired //default (require = true)
   //this is runtime to connect
   //compiler wont new a object
   public HelloworldService helloworldService;
@@ -169,4 +176,72 @@ public class HelloworldController {
 
     }
     */
+
+    @PostMapping(value = {"/giftlist/{name}"})
+    public Boolean createString(
+      @PathVariable String name){
+      return  helloworldService.createString(name);
+
+    }
+
+
+    @GetMapping(value = {"/giftlist"})
+    public ResponseEntity<List<String>> getAllString(){
+      try {
+        List<String> string = helloworldService.getAllString();
+        return ResponseEntity.ok().body(string);
+      } catch (Exception e) {
+       return ResponseEntity.badRequest().body(new ArrayList<>());
+      }
+    }
+
+
+
+
+    //Delete which name
+    @DeleteMapping(value = {"/giftlist/{name}"})
+    public Boolean delete( @PathVariable String name){
+      return  helloworldService.delete(name);
+    }
+
+
+    //Delete All
+    @DeleteMapping(value = {"/giftlist"})
+    public List<String> deleteAll(){
+      if  (helloworldService.deleteAll()){
+        return helloworldService.getAllString();
+      }
+      return new ArrayList<>();
+    }
+
+    //Detele Last
+    @DeleteMapping(value = {"/giftlist/deleteLast"})
+    public String deleteLast(){
+      return  helloworldService.deleteLast();
+    }
+
+
+
+
+    @PutMapping(value = "/giftlist/")
+    public List<String> updateString(@RequestBody List<String> strings){
+        return helloworldService.updateString(strings);
+      }
+
+
+
+    @GetMapping(value = "/giftlist/tstring")
+    public List<String> getStringT(){
+      return helloworldService.getAllString().stream()  //this instance method
+      .filter(s ->  s.toUpperCase().startsWith("T"))
+      .collect(Collectors.toList());
+     }
+    
+
+     @PatchMapping(value = {"/giftlist"})
+     public String updateFirst(
+      @RequestParam String element){
+        return helloworldService.updateFirst(element);
+     }
+
 }

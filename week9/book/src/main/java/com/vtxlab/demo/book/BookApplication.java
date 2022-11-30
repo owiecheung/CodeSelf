@@ -18,10 +18,16 @@ public class BookApplication {
 	}
 
 	public static void displayAllBeans(){
-		String[] allBeanNames = applicationContext.getBeanDefinitionNames();
-		for(String a : allBeanNames ){
-			log.info("\nBean : {}",a);
+		try {
+			String[] allBeanNames = applicationContext.getBeanDefinitionNames();
+			for(String a : allBeanNames ){
+				log.info("\nBean : {}",a);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		}
 	}
 
-}
+

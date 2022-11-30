@@ -285,5 +285,7 @@ public class Week3Vincent {
       System.out.println("Red is a Olympic color");
     }
 
+
+  
   }
 }

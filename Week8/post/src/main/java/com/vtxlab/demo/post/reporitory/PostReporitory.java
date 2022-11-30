@@ -18,6 +18,7 @@ public interface PostReporitory extends JpaRepository<Post, Long>{  // <Post (re
    * @param title Title as User input
    * @return List of posts
    */
+  
   List<Post> findByTitle(String title);
 
   //LIKE

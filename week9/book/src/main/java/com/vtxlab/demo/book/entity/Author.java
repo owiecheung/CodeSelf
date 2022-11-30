@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -40,7 +39,13 @@ public class Author {
 
 
   @OneToMany(mappedBy = "author", fetch = FetchType.LAZY,
-  cascade = CascadeType.PERSIST, orphanRemoval = true)
+  cascade = CascadeType.PERSIST)
   @JsonIgnoreProperties({"author"})
-  List<Book> books = new ArrayList<>();
+  private List<Book> books;
+
+  public Author(Long id, String authorName, String nationality){
+    this.id = id;
+    this.authorName = authorName;
+    this.nationality = nationality;
+  }
 }

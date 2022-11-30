@@ -28,7 +28,7 @@ public class Optional1 {
       System.out.println(e.length());
     });
 
-    String s2 = s.orElse("Stevee");
+    String s2 = s.orElse("Stevee"+"2");
     System.out.println(s2);
     s.ifPresent(e -> {
       System.out.println(s.get()); //another runtime exception
@@ -36,8 +36,11 @@ public class Optional1 {
     // need to type ifPresent -> NoSuchElementException
 
     Optional<String> opt2 = Optional.ofNullable(null);
-    String defaultWithOrElse = opt2.orElse("default value");
+    String defaultWithOrElse = opt2.orElse("default value"+"3");
     System.out.println(defaultWithOrElse);
+    
+
+
 
   }
 }

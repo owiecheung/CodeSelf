@@ -103,16 +103,16 @@ public class Address2 {
 
   public static void main(String[] args) {
     Address2 address  = new Address2("Flat A", "Blk 2","Sheung Wan","HK","852");
-    Address2 addressForTest  = new Address2(null,null,null,"HK","852");
+   // Address2 addressForTest  = new Address2(null,null,null,"HK","852");
     Address2 address1 = new Address2();
     address1.setAddressLine1("Hell").setAddressLine2("666");
-
-
-    if (address.isAddressLineValid()) 
-        address.printStatus();
-    if (addressForTest.isAddressLineValid()) 
-        address.printStatus();
-    if (address1.isAddressLineValid()) 
-        address.printStatus();
+    address.printStatus();
+    System.out.println(address);
+   // if (address.isAddressLineValid()) 
+     //   address.printStatus();
+   // if (addressForTest.isAddressLineValid()) 
+     //   address.printStatus();
+   // if (address1.isAddressLineValid()) 
+     //   address.printStatus();
   }
 }

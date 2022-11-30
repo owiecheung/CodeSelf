@@ -24,9 +24,11 @@ public class AuthorController implements AuthorOperation {
 
 
   @Autowired
+//  @Qualifier(value = "AuthorService")
   AuthorService authorService;
 
   @Autowired
+ // @Qualifier(value = "ModelMapper")
   ModelMapper modelMapper;
 
   @Override
@@ -103,9 +105,9 @@ public class AuthorController implements AuthorOperation {
     return ResponseEntity.noContent().build();
     } 
     return ResponseEntity.ok().body(response);
-
   }
 
+  
   @Override
   public ResponseEntity<Void> deleteById(Long id) {
     authorService.deleteAuthor(id);
