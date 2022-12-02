@@ -1,0 +1,11 @@
+server:
+  port: 8088
+
+
+rest:
+  weather:
+    baseUrl: https://api.openweathermap.org
+    serviceVers: data/2.5
+    serviceUrl: weather
+    appid: f6ba868a874991af4021c3bc52c10f4e
+
