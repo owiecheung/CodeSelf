@@ -3,28 +3,19 @@ package com.vtxlab.demo.book;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vtxlab.demo.book.controller.BookOperation;
 import com.vtxlab.demo.book.controller.impl.BookstoreController;
 import com.vtxlab.demo.book.entity.Author;
@@ -32,9 +23,7 @@ import com.vtxlab.demo.book.entity.Book;
 import com.vtxlab.demo.book.reponse.ApiResponse;
 import com.vtxlab.demo.book.service.BookService;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @ExtendWith(SpringExtension.class) // @Mock , @MOckBean , @InjectMock(Must be class not interface)
 public class BookControllerUnitTest {
 

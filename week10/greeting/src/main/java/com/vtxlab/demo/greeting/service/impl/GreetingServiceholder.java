@@ -26,5 +26,10 @@ public class GreetingServiceholder implements GreetingService{
   public List<Book> findAllBook(){
     return greetingRepository.findAll();
   }
+
+  @Override
+  public Book findBookById(Long id){
+    return greetingRepository.findById(id).orElse(new Book());
+  }
   
 }

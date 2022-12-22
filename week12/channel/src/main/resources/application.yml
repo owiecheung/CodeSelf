@@ -1,0 +1,11 @@
+
+server:
+  port: 8088
+
+service:
+  admin:
+    baseUrl: http://localhost:8087 # call admin-service host
+    serviceVers: crypto/admin/apr/v1
+    endpoint: 
+      coinmap-Url: channel/{id}/coinmap   # Approach 1
+      coinmap-Url2: channel/{id}/coinmap   # Approach 2

@@ -1,5 +1,11 @@
 package com.vtxlab.demo.weather.model.elements;
 
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,8 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Sys {
+public class Sys implements Serializable{
   // "sys": {
   //   "type": 2,
   //   "id": 2075663,
@@ -16,11 +21,19 @@ public class Sys {
   //   "sunrise": 1661834187,
   //   "sunset": 1661882248
 
+  @JsonProperty("type")
+  private BigDecimal type;
 
-  private Long type;
-  private Long id;
+  @JsonProperty("id")
+  private BigDecimal id;
+
+  @JsonProperty("country")
   private String country;
-  private Long sunrise;
-  private Long sunset;
+
+  @JsonProperty("sunrise")
+  private BigDecimal sunrise;
+
+  @JsonProperty("sunset")
+  private BigDecimal sunset;
 
 }

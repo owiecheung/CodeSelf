@@ -1,5 +1,10 @@
 package com.vtxlab.demo.weather.model.elements;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,8 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Clouds {
+public class Clouds implements Serializable{
   
-  private Integer all;
+  @JsonProperty("all")
+  private BigDecimal cloudinessPercent;
+
   
 }

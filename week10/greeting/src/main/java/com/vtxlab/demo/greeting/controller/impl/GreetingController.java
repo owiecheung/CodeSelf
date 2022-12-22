@@ -3,6 +3,7 @@ package com.vtxlab.demo.greeting.controller.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,12 +24,19 @@ public class GreetingController implements GreetingOperation{
 
   @Override
   public String greeting(){
-    return greetingService.greeting() + "d";
+    return greetingService.greeting() + " Owie";
   }
 
   @Override
   public List<Book> findAllBook(){
     return greetingService.findAllBook();
+  }
+
+
+  @Override
+  public ResponseEntity<Book> findBookById(Long id){
+
+    return ResponseEntity.ok().body(greetingService.findBookById(id));
   }
 
 }

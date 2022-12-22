@@ -9,3 +9,11 @@ rest:
     serviceUrl: weather
     appid: f6ba868a874991af4021c3bc52c10f4e
 
+spring:
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      password:
+      timeout: 60000

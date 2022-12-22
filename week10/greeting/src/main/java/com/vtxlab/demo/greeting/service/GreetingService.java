@@ -9,4 +9,6 @@ public interface GreetingService {
   String greeting();
 
   List<Book> findAllBook();
+
+  Book findBookById(Long id);
 }

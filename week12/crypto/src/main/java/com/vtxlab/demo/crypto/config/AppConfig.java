@@ -1,0 +1,10 @@
+package com.vtxlab.demo.crypto.config;
+
+import org.springframework.context.annotation.Configuration;
+
+
+@Configuration
+public class AppConfig {
+
+
+}

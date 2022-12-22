@@ -20,5 +20,10 @@ spring:
       data-locations: classpath:DML_AUTHORS.sql,classpath:DML_BOOKS.sql
       mode: always
 
+rest:
+  greeting:
+    baseUrl: http://localhost:8011
+    serviceVers: api/v1
+    serviceUrl: greeting
 
   
